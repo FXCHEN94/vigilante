@@ -1,0 +1,85 @@
+{% extends "global/Page.html" %} {% load otree %} {% block title %}
+{% endblock %}
+
+{% block content %}
+
+<div align="center">
+<h4><span style="color: #000000;"><strong><span style="font-size: x-large;">Now you have a chance to <span style="color: #ff0000;">remove points</span> from your Group Members by using the {{ player.payoff2 }} points you have.</span></strong></span></h4>
+</div>
+<table class="table table-hover text-center" style="width: 1086px; margin: auto; height: 181px;" align="center">
+<tbody>
+<tr style="height: 39px; text-align: center;">
+<th style="height: 39px; width: 51px;"><span style="font-size: 10pt;">Player</span></th>
+<th style="height: 39px; width: 82px;"><span style="font-size: 10pt;">Endowment</span></th>
+<th style="height: 39px; width: 5px;">&nbsp;</th>
+<th style="height: 39px; width: 184px;"><span style="font-size: 10pt;">Contribution</span></th>
+<th style="height: 39px; width: 11px;">&nbsp;</th>
+<th style="height: 39px; width: 147px;"><span style="font-size: 10pt;">Share from the Group Project</span></th>
+<th style="height: 39px; width: 14px;">&nbsp;</th>
+<th style="height: 39px; width: 151px;"><span style="font-size: 10pt;">Removed by Leader</span></th>
+<th style="height: 39px; width: 90.40625px;">&nbsp;</th>
+<th style="height: 39px; width: 210.59375px;"><span style="font-size: 10pt;">Current Earnings</span></th>
+<th style="height: 39px; width: 7px;">&nbsp;</th>
+<th style="height: 39px; width: 177px;"><span style="font-size: 10pt;">How many points to remove?</span></th>
+<th style="height: 39px; width: 14px;">&nbsp;</th>
+<th style="height: 39px; width: 68px;"><span style="font-size: 10pt;">Final Earnings</span></th>
+</tr>
+<tr style="height: 39px; text-align: center;">
+<td style="height: 39px; width: 51px;"><span style="font-size: 10pt;">Group Member 1</span></td>
+<td style="height: 39px; width: 82px;"><span style="font-size: 10pt;">100</span></td>
+<td style="height: 39px; width: 5px;"><span style="color: #000000; font-size: 10pt;"><strong>-</strong></span></td>
+<td class="c" style="height: 39px; width: 184px;"><span style="color: #ff6600; font-size: 10pt;"><strong>20</strong></span></td>
+<td class="a" style="height: 39px; width: 11px;"><strong><span style="color: #000000; font-size: 10pt;">+</span></strong></td>
+<td class="a" style="height: 39px; width: 147px;"><span style="font-size: 10pt;">{{ group.individual_share }}</span></td>
+<td class="t" style="height: 39px; width: 14px;"><span style="font-size: small;"><strong>-</strong></span></td>
+<td class="t" style="height: 39px; width: 151px;"><span style="color: #ff0000; font-size: 10pt;"><strong>5</strong></span></td>
+<td class="t" style="height: 39px; width: 90.40625px;"><span style="color: #000000; font-size: 10pt;"><strong>=</strong></span></td>
+<td class="t" style="height: 39px; width: 210.59375px;"><span style="color: #0000ff; font-size: 10pt;"><strong>{{ group.p1_current }}</strong></span></td>
+<td class="t" style="height: 39px; width: 7px;"><span style="color: #000000; font-size: 10pt;"><strong>-</strong></span></td>
+<td class="t" style="height: 39px; width: 177px;"><span style="color: #000000; font-size: 10pt;">{% formfield group.decision_member1 %}</span></td>
+<td class="t" style="height: 39px; width: 14px;"><span style="color: #000000; font-size: 10pt;"><strong>&nbsp;=</strong></span></td>
+<td class="t" style="height: 39px; width: 68px; text-align: center;"><span style="color: #0000ff; font-size: 10pt;"><strong>?</strong></span></td>
+</tr>
+<tr style="height: 39px; text-align: center;">
+<td style="height: 39px; width: 51px;"><span style="font-size: 10pt;">Group Member 2</span></td>
+<td style="height: 39px; width: 82px;"><span style="font-size: 10pt;">100</span></td>
+<td style="height: 39px; width: 5px;"><span style="color: #000000; font-size: 10pt;"><strong>-</strong></span></td>
+<td class="c" style="height: 39px; width: 184px;"><span style="color: #ff6600; font-size: 10pt;"><strong>15</strong></span></td>
+<td style="height: 39px; width: 11px;"><span style="color: #000000; font-size: 10pt;"><strong>+</strong></span></td>
+<td class="a" style="height: 39px; width: 147px;"><span style="font-size: 10pt;">{{ group.individual_share }}</span></td>
+<td class="t" style="height: 39px; width: 14px;"><span style="font-size: small;"><strong>-</strong></span></td>
+<td class="t" style="height: 39px; width: 151px;"><span style="color: #ff0000; font-size: 10pt;"><strong>11</strong></span></td>
+<td class="t" style="height: 39px; width: 90.40625px;"><span style="color: #000000; font-size: 10pt;"><strong>=</strong></span></td>
+<td class="t" style="height: 39px; width: 210.59375px;"><span style="color: #0000ff; font-size: 10pt;"><strong>{{ group.p2_current }}</strong></span></td>
+<td class="t" style="height: 39px; width: 7px;"><span style="color: #000000; font-size: 10pt;"><strong>-</strong></span></td>
+<td class="t" style="height: 39px; width: 177px;"><span style="color: #000000; font-size: 10pt;">{% formfield group.decision_member2 %}</span></td>
+<td class="t" style="height: 39px; width: 14px;"><span style="color: #000000; font-size: 10pt;"><strong>=</strong></span></td>
+<td class="t" style="height: 39px; width: 68px; text-align: center;"><span style="color: #0000ff; font-size: 10pt;"><strong>?</strong></span></td>
+</tr>
+<tr style="height: 39px;">
+<td style="height: 39px; width: 51px; text-align: center;"><span style="font-size: 10pt;">Group Member 3</span></td>
+<td style="height: 39px; width: 82px; text-align: center;"><span style="font-size: 10pt;">100</span></td>
+<td style="height: 39px; width: 5px; text-align: center;"><span style="color: #000000; font-size: 10pt;"><strong>-</strong></span></td>
+<td class="c" style="height: 39px; width: 184px; text-align: center;"><span style="color: #ff6600; font-size: 10pt;"><strong>33</strong></span></td>
+<td style="height: 39px; width: 11px; text-align: center;"><span style="color: #000000; font-size: 10pt;"><strong>+</strong></span></td>
+<td class="a" style="height: 39px; width: 147px; text-align: center;"><span style="font-size: 10pt;">{{ group.individual_share }}</span></td>
+<td class="t" style="height: 39px; width: 14px; text-align: center;"><span style="font-size: small;"><strong>-</strong></span></td>
+<td class="t" style="height: 39px; width: 151px; text-align: center;"><span style="color: #ff0000; font-size: 10pt;"><strong>2</strong></span></td>
+<td class="t" style="height: 39px; width: 90.40625px; text-align: center;"><span style="color: #000000; font-size: 10pt;"><strong>=</strong></span></td>
+<td class="t" style="height: 39px; width: 210.59375px; text-align: center;"><span style="color: #0000ff; font-size: 10pt;"><strong>{{ group.p3_current }}</strong></span></td>
+<td class="t" style="height: 39px; width: 7px; text-align: center;"><span style="color: #000000; font-size: 10pt;"><strong>-</strong></span></td>
+<td class="t" style="height: 39px; width: 177px; text-align: center;"><span style="color: #000000; font-size: 10pt;">{% formfield group.decision_member3 %}</span></td>
+<td class="t" style="height: 39px; width: 14px;"><span style="color: #000000; font-size: 10pt;"><strong>=</strong></span></td>
+<td class="t" style="height: 39px; width: 68px; text-align: center;"><span style="color: #0000ff; font-size: 10pt;"><strong>?</strong></span></td>
+</tr>
+</tbody>
+</table>
+<hr /><hr />
+
+
+
+<p>{% next_button %}</p>
+
+
+{% endblock %}
+

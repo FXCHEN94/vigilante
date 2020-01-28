@@ -1,0 +1,14 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+<div align = "center"> <h2 style="text-align: center;">Instructions <b><font color = "0000FF"></font></b></h2> <hr/></div>
+{% endblock %}
+
+{% block content %}
+
+    {% include Constants.instructions_template %}
+
+<p></p>
+    {% next_button %}
+{% endblock %}

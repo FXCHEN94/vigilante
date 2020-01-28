@@ -1,0 +1,225 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+     <h3 style="text-align: center;"><strong>Results</strong></h3><hr/>
+{% endblock %}
+
+{% block content %}
+
+<h4 style="text-align: left;"><strong>Your earnings for this round:</strong></h4>
+<p style="text-align: center;"><strong>&nbsp;</strong></p>
+<table class="table table-hover text-center" style="width: 1297px; margin: auto; height: 84px;">
+<tbody>
+<tr style="height: 13px;">
+<th style="height: 13px; width: 97px;">
+<p>Endowment</p>
+</th>
+<th style="height: 13px; width: 10px;">
+<p>&nbsp;</p>
+</th>
+<th style="height: 13px; width: 208px;">
+<p>Contribution</p>
+</th>
+<th style="height: 13px; width: 18px;">
+<p>&nbsp;</p>
+</th>
+<th style="height: 13px; width: 255px;">
+<p>Share from the Group Project</p>
+</th>
+<th style="height: 13px; width: 31px;">
+<p>&nbsp;</p>
+</th>
+<th style="height: 13px; width: 174px;">
+<p>Removed by Leader</p>
+</th>
+<th style="height: 13px; width: 32px;">&nbsp;</th>
+<th style="height: 13px; width: 259.0625px;">
+<p>Points spent removing others</p>
+</th>
+<th style="height: 13px; width: 90.9375px;">&nbsp;</th>
+<th style="height: 13px; width: 164px;">
+<p>Earnings for this Round</p>
+</th>
+</tr>
+<tr style="height: 13px;">
+<td style="height: 13px; width: 97px;">
+<p><strong>100</strong></p>
+</td>
+<td class="c" style="height: 13px; width: 10px;">
+<p><strong><span style="color: #000000;">-</span></strong></p>
+</td>
+<td class="c" style="height: 13px; width: 208px;">
+<p><strong><span style="color: #ff6600;">{{ player.contribution }}</span></strong></p>
+</td>
+<td class="a" style="height: 13px; width: 18px;">
+<p><strong><span style="color: #000000;">+</span></strong></p>
+</td>
+<td class="a" style="height: 13px; width: 255px;">
+<p><strong><span style="color: #008000;">{{ group.individual_share }}</span></strong></p>
+</td>
+<td class="t" style="height: 13px; width: 31px;">
+<p><span style="color: #000000;"><strong>-</strong></span></p>
+</td>
+<td class="t" style="height: 13px; width: 174px;">
+<p><span style="color: #ff0000;"><strong>6</strong></span></p>
+</td>
+<td class="t" style="height: 13px; width: 32px;">
+<p><strong><span style="color: #0000ff;">-</span></strong></p>
+</td>
+<td class="t" style="height: 13px; width: 259.0625px;">
+<p><span style="background-color: #ffff00; color: #333333;"><strong>{{ group.total_removed }}</strong></span></p>
+</td>
+<td class="t" style="height: 13px; width: 90.9375px;">
+<p><strong><span style="color: #0000ff;">=</span></strong></p>
+</td>
+<td class="t" style="height: 13px; width: 164px;">
+<p><strong><span style="color: #0000ff;">{{ player.payoff }}</span></strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>&nbsp;</p>
+<h4 style="text-align: left;"><strong>Summary of other Group Members:</strong></h4>
+<p style="text-align: center;"><strong>&nbsp;</strong></p>
+<table class="table table-hover text-center" style="width: 1305.15625px; margin: auto; height: 84px;">
+<tbody>
+<tr style="height: 13px;">
+<th style="height: 13px; width: 120px;">
+<p>Player</p>
+</th>
+<th style="height: 13px; width: 97px;">
+<p>Endowment</p>
+</th>
+<th style="height: 13px; width: 10px;">
+<p>&nbsp;</p>
+</th>
+<th style="height: 13px; width: 121px;">
+<p>Contribution</p>
+</th>
+<th style="height: 13px; width: 10px;">
+<p>&nbsp;</p>
+</th>
+<th style="height: 13px; width: 168px;">
+<p>Share from the Group Project</p>
+</th>
+<th style="height: 13px; width: 10px;">&nbsp;</th>
+<th style="height: 13px; width: 141px;">
+<p>Removed by Leader</p>
+</th>
+<th style="height: 13px; width: 17px;">&nbsp;</th>
+<th style="height: 13px; width: 287px;">
+<p>Removed by you</p>
+</th>
+<th style="height: 13px; width: 10px;">
+<p>&nbsp;</p>
+</th>
+<th style="height: 13px; width: 196.15625px;">
+<p>Earnings for this Round</p>
+</th>
+</tr>
+<tr style="height: 13px;">
+<td style="height: 13px; width: 120px;">
+<p>Group Member 1</p>
+</td>
+<td style="height: 13px; width: 97px;">
+<p><strong>100</strong></p>
+</td>
+<td class="c" style="height: 13px; width: 10px;">
+<p><strong><span style="color: #000000;">-</span></strong></p>
+</td>
+<td class="c" style="height: 13px; width: 121px;">
+<p><strong><span style="color: #ff6600;">20</span></strong></p>
+</td>
+<td class="a" style="height: 13px; width: 10px;">
+<p><strong><span style="color: #000000;">+</span></strong></p>
+</td>
+<td class="a" style="height: 13px; width: 168px;">
+<p><strong><span style="color: #008000;">{{ group.individual_share }}</span></strong></p>
+</td>
+<td class="t" style="height: 13px; width: 10px;">
+<p><span style="color: #000000;"><strong>-</strong></span></p>
+</td>
+<td class="t" style="height: 13px; width: 141px;">
+<p><strong><span style="color: #ff0000;">5</span></strong></p>
+</td>
+<td class="t" style="height: 13px; width: 17px;">
+<p><strong>-</strong></p>
+</td>
+<td class="t" style="height: 13px; width: 287px;">
+<p><strong><span style="background-color: #ffff00;">{{ group.decision_member1 }}</span></strong></p>
+</td>
+<td class="t" style="height: 13px; width: 10px;">
+<p><span style="color: #000000;"><strong>=</strong></span></p>
+</td>
+<td class="t" style="height: 13px; width: 196.15625px;">
+<p><strong><span style="color: #0000ff;">{{ player.p1_payoff2 }}</span></strong></p>
+</td>
+</tr>
+<tr style="height: 13px;">
+<td style="height: 13px; width: 120px;">
+<p>Group Member 2</p>
+</td>
+<td style="height: 13px; width: 97px;">
+<p><strong>100</strong></p>
+</td>
+<td class="c" style="height: 13px; width: 10px;">
+<p><strong><span style="color: #000000;">-</span></strong></p>
+</td>
+<td class="c" style="height: 13px; width: 121px;">
+<p><strong><span style="color: #ff6600;"><span style="color: #ff6600;">15</span></span></strong></p>
+</td>
+<td class="a" style="height: 13px; width: 10px;">
+<p><strong><span style="color: #000000;">+</span></strong></p>
+</td>
+<td class="a" style="height: 13px; width: 168px;">
+<p><strong><span style="color: #008000;"><span style="color: #008000;">{{ group.individual_share }}</span></span></strong></p>
+</td>
+<td class="t" style="height: 13px; width: 10px;">
+<p><strong><span style="color: #000000;">-</span></strong></p>
+</td>
+<td class="t" style="height: 13px; width: 141px;">
+<p><strong><span style="color: #ff0000;">11</span></strong></p>
+</td>
+<td class="t" style="height: 13px; width: 17px;">
+<p><strong>-</strong></p>
+</td>
+<td class="t" style="height: 13px; width: 287px;">
+<p><strong><span style="background-color: #ffff00;">{{ group.decision_member2 }}</span></strong></p>
+</td>
+<td class="t" style="height: 13px; width: 10px;">
+<p><strong><span style="color: #000000;">=</span></strong></p>
+</td>
+<td class="t" style="height: 13px; width: 196.15625px;">
+<p><strong><span style="color: #0000ff;">{{ player.p2_payoff2 }}</span></strong></p>
+</td>
+</tr>
+<tr style="height: 13px;">
+<td style="height: 13px; width: 120px;">
+<p>Group Member 3</p>
+</td>
+<td style="height: 13px; width: 97px;">
+<p><strong>100</strong></p>
+</td>
+<td class="c" style="height: 13px; width: 10px;">
+<p><strong><span style="color: #000000;">-</span></strong></p>
+</td>
+<td class="c" style="height: 13px; width: 121px;"><strong><span style="color: #ff6600;">33</span></strong></td>
+<td class="a" style="height: 13px; width: 10px;">+</td>
+<td class="a" style="height: 13px; width: 168px;"><strong><span style="color: #008000;">{{ group.individual_share }}</span></strong></td>
+<td class="t" style="height: 13px; width: 10px;"><strong>-</strong></td>
+<td class="t" style="height: 13px; width: 141px;"><strong><span style="color: #ff0000;">2</span></strong></td>
+<td class="t" style="height: 13px; width: 17px;"><strong>-</strong></td>
+<td class="t" style="height: 13px; width: 287px;"><strong><span style="background-color: #ffff00;">{{ group.decision_member3 }}</span></strong></td>
+<td class="t" style="height: 13px; width: 10px;">=</td>
+<td class="t" style="height: 13px; width: 196.15625px;"><strong><span style="color: #0000ff;">{{ player.p3_payoff2 }}</span></strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>&nbsp;</p>
+    {% next_button %}
+
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+<div align = "center"> General instructions about the study </div><hr/>
+{% endblock %}
+
+{% block content %}
+1. Please watch the entire video.<br/>
+    2. It contains important instructions about today's study, including info on how your earnings will be calculated.<br/>
+    3. After you watch the video in full, the next button will appear (in <span id="countdowntimer">10</span> seconds).
+
+
+
+
+
+<hr/>
+<center><iframe width="1000" height="562" src="https://www.youtube-nocookie.com/embed/VNbq3zT21Ss?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center>
+
+<hr/>
+
+
+    <p>
+        <input class="btn btn-primary btn-large btn-primary next-button" type="submit" value="Next"/>
+    </p>
+
+    <script>
+1
+    var showButton = document.getElementsByClassName("btn btn-primary btn-large btn-primary next-button")[0];
+    var counter = 10;
+    var newElement = document.createElement("p");
+    newElement.innerHTML = "";
+    var interval;
+
+    showButton.parentNode.replaceChild(newElement, showButton);
+
+    interval = setInterval(function() {
+        counter--;
+        if(counter < 0) {
+            newElement.parentNode.replaceChild(showButton, newElement);
+            clearInterval(interval);
+        } else {
+            newElement.innerHTML = "";
+        }
+    }, 1000);
+
+    </script>
+
+<script type="text/javascript">
+    var timeleft = 10;
+    var downloadTimer = setInterval(function(){
+    timeleft--;
+    document.getElementById("countdowntimer").textContent = timeleft;
+    if(timeleft <= 0)
+        clearInterval(downloadTimer);
+    },1000);
+</script>
+
+
+{% endblock %}
+

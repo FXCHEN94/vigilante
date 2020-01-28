@@ -1,0 +1,199 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+     <h3 style="text-align: center;"><strong>Your group leader has made the following decisions:</strong></h3><hr/>
+{% endblock %}
+
+{% block content %}
+<h4 style="text-align: left;"><strong>Your earnings for this round:</strong></h4>
+<p style="text-align: center;"><strong>&nbsp;</strong></p>
+<table class="table table-hover text-center" style="width: 800px; margin: auto; height: 84px;">
+<tbody>
+<tr style="height: 13px;">
+<th style="height: 13px; width: 97.765625px;">
+<p>Endowment</p>
+</th>
+<th style="height: 13px; width: 10px;">
+<p>&nbsp;</p>
+</th>
+<th style="height: 13px; width: 208px;">
+<p>Contribution</p>
+</th>
+<th style="height: 13px; width: 18px;">
+<p>&nbsp;</p>
+</th>
+<th style="height: 13px; width: 255px;">
+<p>Share from the Group Project</p>
+</th>
+<th style="height: 13px; width: 31px;">
+<p>&nbsp;</p>
+</th>
+<th style="height: 13px; width: 201px;">
+<p>Removed by Leader</p>
+</th>
+<th style="height: 13px; width: 201px;">&nbsp;</th>
+<th style="height: 13px; width: 201px;">
+<p>Earnings for this Round</p>
+</th>
+</tr>
+<tr style="height: 13px;">
+<td style="height: 13px; width: 97.765625px;">
+<p><strong>100</strong></p>
+</td>
+<td class="c" style="height: 13px; width: 10px;">
+<p><strong><span style="color: #000000;">-</span></strong></p>
+</td>
+<td class="c" style="height: 13px; width: 208px;">
+<p><strong><span style="color: #ff6600;">{{ player.contribution }}</span></strong></p>
+</td>
+<td class="a" style="height: 13px; width: 18px;">
+<p><strong><span style="color: #000000;">+</span></strong></p>
+</td>
+<td class="a" style="height: 13px; width: 255px;">
+<p><strong><span style="color: #008000;">{{ group.individual_share }}</span></strong></p>
+</td>
+<td class="t" style="height: 13px; width: 31px;">
+<p><span style="color: #000000;"><strong>-</strong></span></p>
+</td>
+<td class="t" style="height: 13px; width: 201px;">
+<p><span style="color: #ff0000;"><strong>6</strong></span></p>
+</td>
+<td class="t" style="height: 13px; width: 201px;">
+<p><span style="color: #000000;"><strong>=</strong></span></p>
+</td>
+<td class="t" style="height: 13px; width: 201px;">
+<p><strong><span style="color: #0000ff;">{{ player.payoff2 }}</span></strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>&nbsp;</p>
+<h4 style="text-align: left;"><strong>Summary of other Group Members:</strong></h4>
+<p style="text-align: center;"><strong>&nbsp;</strong></p>
+<table class="table table-hover text-center" style="width: 798px; margin: auto; height: 84px;">
+<tbody>
+<tr style="height: 13px;">
+<th style="height: 13px; width: 120px;">
+<p>Player</p>
+</th>
+<th style="height: 13px; width: 97px;">
+<p>Endowment</p>
+</th>
+<th style="height: 13px; width: 10px;">
+<p>&nbsp;</p>
+</th>
+<th style="height: 13px; width: 208px;">
+<p>Contribution</p>
+</th>
+<th style="height: 13px; width: 18px;">
+<p>&nbsp;</p>
+</th>
+<th style="height: 13px; width: 255px;">
+<p>Share from the Group Project</p>
+</th>
+<th style="height: 13px; width: 31px;">
+<p>&nbsp;</p>
+</th>
+<th style="height: 13px; width: 201px;">
+<p>Removed by Leader</p>
+</th>
+<th style="height: 13px; width: 201.390625px;">&nbsp;</th>
+<th style="height: 13px; width: 200.609375px;">
+<p>Earnings for this Round</p>
+</th>
+</tr>
+<tr style="height: 13px;">
+<td style="height: 13px; width: 120px;">
+<p>Group Member 1</p>
+</td>
+<td style="height: 13px; width: 97px;">
+<p><strong>100</strong></p>
+</td>
+<td class="c" style="height: 13px; width: 10px;">
+<p><strong><span style="color: #000000;">-</span></strong></p>
+</td>
+<td class="c" style="height: 13px; width: 208px;">
+<p><strong><span style="color: #ff6600;">20</span></strong></p>
+</td>
+<td class="a" style="height: 13px; width: 18px;">
+<p><strong><span style="color: #000000;">+</span></strong></p>
+</td>
+<td class="a" style="height: 13px; width: 255px;">
+<p><strong><span style="color: #008000;">{{ group.individual_share }}</span></strong></p>
+</td>
+<td class="t" style="height: 13px; width: 31px;">
+<p><span style="color: #000000;"><strong>-</strong></span></p>
+</td>
+<td class="t" style="height: 13px; width: 201px;">
+<p><span style="color: #ff0000;"><strong>5</strong></span></p>
+</td>
+<td class="t" style="height: 13px; width: 201.390625px;">
+<p><span style="color: #000000;"><strong>=</strong></span></p>
+</td>
+<td class="t" style="height: 13px; width: 200.609375px;">
+<p><strong><span style="color: #0000ff;">{{ group.p1_current }}</span></strong></p>
+</td>
+</tr>
+<tr style="height: 13px;">
+<td style="height: 13px; width: 120px;">
+<p>Group Member 2</p>
+</td>
+<td style="height: 13px; width: 97px;">
+<p><strong>100</strong></p>
+</td>
+<td class="c" style="height: 13px; width: 10px;">
+<p><strong><span style="color: #000000;">-</span></strong></p>
+</td>
+<td class="c" style="height: 13px; width: 208px;">
+<p><strong><span style="color: #ff6600;"><span style="color: #ff6600;">15</span></span></strong></p>
+</td>
+<td class="a" style="height: 13px; width: 18px;">
+<p><strong><span style="color: #000000;">+</span></strong></p>
+</td>
+<td class="a" style="height: 13px; width: 255px;">
+<p><strong><span style="color: #008000;"><span style="color: #008000;">{{ group.individual_share }}</span></span></strong></p>
+</td>
+<td class="t" style="height: 13px; width: 31px;">
+<p><strong><span style="color: #000000;">-</span></strong></p>
+</td>
+<td class="t" style="height: 13px; width: 201px;">
+<p><span style="color: #ff0000;"><strong>11</strong></span></p>
+</td>
+<td class="t" style="height: 13px; width: 201.390625px;">
+<p><span style="color: #000000;"><strong>=</strong></span></p>
+</td>
+<td class="t" style="height: 13px; width: 200.609375px;">
+<p><strong><span style="color: #0000ff;"><span style="color: #0000ff;">{{ group.p2_current }}</span></span></strong></p>
+</td>
+</tr>
+<tr style="height: 13px;">
+<td style="height: 13px; width: 120px;">
+<p>Group Member 3</p>
+</td>
+<td style="height: 13px; width: 97px;">
+<p><strong>100</strong></p>
+</td>
+<td class="c" style="height: 13px; width: 10px;">
+<p><strong><span style="color: #000000;">-</span></strong></p>
+</td>
+<td class="c" style="height: 13px; width: 208px;"><span style="color: #ff6600;"><span style="caret-color: #ff6600;"><strong>33</strong></span></span></td>
+<td class="a" style="height: 13px; width: 18px;">+</td>
+<td class="a" style="height: 13px; width: 255px;"><strong><span style="color: #008000;">{{ group.individual_share }}</span></strong></td>
+<td class="t" style="height: 13px; width: 31px;"><strong>-</strong></td>
+<td class="t" style="height: 13px; width: 201px;"><span style="color: #ff0000;"><span style="caret-color: #0000ff;"><strong>2</strong></span></span></td>
+<td class="t" style="height: 13px; width: 201.390625px;"><span style="color: #000000;"><strong>=</strong></span></td>
+<td class="t" style="height: 13px; width: 200.609375px;"><strong><span style="color: #0000ff;">{{ group.p3_current }}</span></strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>&nbsp;</p>
+
+    {% next_button %}
+
+
+
+
+{% endblock %}

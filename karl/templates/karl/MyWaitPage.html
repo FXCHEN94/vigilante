@@ -1,0 +1,24 @@
+{% extends 'global/Page.html' %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Waiting Room
+{% endblock %}
+
+{% block content %}
+
+
+{#    <table class="table-condensed" style="width:500px; margin-top:20px;">#}
+{#        <tr><td>Number of people waiting:</td><td>{{ current_waiting }}</td></tr>#}
+
+{##}
+{#    </table>#}
+{#    <p></p>#}
+
+    {% next_button %}
+
+
+    {% include Constants.instructions_template %}
+
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+<div align="center"> Contribution Page </div>
+{% endblock %}
+
+{% block content %}
+
+<p>Group Project Multiplier: <strong>1.6</strong></p>
+<hr />
+<p>Your initial endowment: <strong>100 points</strong></p>
+<hr />
+<p>&nbsp;</p>
+<center>
+<p>How many points do you want to contribute to the Group Project (from 0 to 100)?</p>
+</center><center>{% formfield player.contribution label="" %}</center><hr />
+<p><strong>Your earnings for this round = </strong> <strong> Endowment - Contribution to the Group + [(Total Group Contribution X 1.6) / 4 Members] - Punishment by Leader</strong></p>
+<hr />
+<p><input class="btn btn-primary btn-large btn-primary next-button" type="submit" value="Submit" /></p>
+<p><br /><br /></p>
+
+<div class="card bg-light">
+    <div class="card-body">
+<p><em><span style="color: #ff0000;">FX's &nbsp;Comments:</span></em></p>
+<p><em><span style="color: #ff0000;">1. Here participants make contribution to the group project using their own initial endowment of 100 points.</span></em></p>
+
+    </div>
+</div>
+{% endblock %}
+
+
